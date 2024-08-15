@@ -12,4 +12,3 @@ services:
     volumes:
       - ./tautulli:/config
     restart: unless-stopped
-

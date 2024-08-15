@@ -1,0 +1,16 @@
+---
+repos:
+  - repo: local
+    hooks:
+      - id: generate-port-list
+        name: Generate Port File
+        entry: python3 list.py README.md
+        language: python
+        additional_dependencies:
+          - pyyaml
+
+  - repo: https://github.com/ansible-community/ansible-lint.git
+    rev: v6.22.2
+    hooks:
+      - id: ansible-lint
+        args: [--exclude, .github]

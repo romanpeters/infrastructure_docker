@@ -26,7 +26,7 @@ def main(output_file=None):
     
     all_services_ports.sort(key=lambda x: x[1])  # Sort by port number
     
-    output = '\n'.join(f"{port} {service_name}" for service_name, port in all_services_ports) + '\n'
+    output = '\n'.join(f"{port} {service_name}  " for service_name, port in all_services_ports) + '\n'
     
     if output_file:
         with open(output_file, 'w') as file:

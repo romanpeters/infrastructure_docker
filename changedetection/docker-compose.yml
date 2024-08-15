@@ -1,8 +1,9 @@
 ---
+name: change
 services:
-  change:
+  changedetection:
     image: dgtlmoon/changedetection.io:0.45.12
-    container_name: change
+    container_name: changedetection
     environment:
       - BASE_URL=https://change.romanpeters.nl
       - PLAYWRIGHT_DRIVER_URL=ws://playwright-chrome:3000/?stealth=1&--disable-web-security=true

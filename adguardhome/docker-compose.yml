@@ -1,4 +1,5 @@
 ---
+name: adguard
 services:
   adguardhome:
     image: adguard/adguardhome:v0.107.43

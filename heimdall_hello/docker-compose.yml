@@ -1,0 +1,12 @@
+---
+services:
+  hello:
+    image: linuxserver/heimdall:2.5.8
+    container_name: heimdall_hello
+    environment:
+      - APP_NAME=romanpeters
+    volumes:
+      - ./heimdall:/config
+    ports:
+      - "8006:80"
+    restart: always

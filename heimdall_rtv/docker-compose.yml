@@ -1,0 +1,12 @@
+---
+services:
+  tv:
+    container_name: heimdall_rtv
+    image: linuxserver/heimdall:2.5.8
+    environment:
+      - APP_NAME=RomanTV
+    volumes:
+      - ./heimdall:/config
+    ports:
+      - 8008:80
+    restart: unless-stopped

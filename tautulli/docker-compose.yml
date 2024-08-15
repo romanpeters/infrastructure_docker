@@ -1,0 +1,15 @@
+---
+services:
+  tautulli:
+    image: linuxserver/tautulli:2.13.4
+    container_name: tautulli
+    environment:
+      - PUID=1080
+      - PGID=1080
+      - TZ=Europe/Amsterdam
+    ports:
+      - 8009:8181
+    volumes:
+      - ./tautulli:/config
+    restart: unless-stopped
+

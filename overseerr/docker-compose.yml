@@ -1,0 +1,13 @@
+---
+services:
+  overseerr:
+    image: sctx/overseerr:1.33.2
+    container_name: overseerr
+    ports:
+      - 8010:5055
+    volumes:
+      - ./overseerr/config/:/app/config
+    environment:
+      - LOG_LEVEL=info
+      - TZ=Europe/Amsterdam
+    restart: unless-stopped

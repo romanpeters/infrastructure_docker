@@ -1,6 +1,7 @@
 ---
+name: nginx
 services:
-  nginx:
+  nginx_proxy_manager:
     image: jc21/nginx-proxy-manager:2.11.1
     container_name: "nginx_proxy_manager"
     ports:

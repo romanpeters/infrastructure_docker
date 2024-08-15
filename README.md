@@ -1,11 +1,11 @@
-8001 change  
-8002 homebox  
-8003 nginx  
-8004 vaultwarden  
-8004 traefik  
-8005 adguardhome  
-8006 hello  
-8007 uptime  
-8008 tv  
-8009 tautulli  
-8010 overseerr  
+8001 change ./changedetection/docker-compose.yml  
+8002 homebox ./homebox/docker-compose.yml  
+8003 nginx ./nginx_proxy_manager/docker-compose.yml  
+8004 vaultwarden ./vaultwarden/docker-compose.yml  
+8004 traefik ./traefik/docker-compose.yml  
+8005 adguard ./adguardhome/docker-compose.yml  
+8006 hello ./heimdall_hello/docker-compose.yml  
+8007 uptime ./uptime_kuma/docker-compose.yml  
+8008 rtv ./heimdall_rtv/docker-compose.yml  
+8009 tautulli ./tautulli/docker-compose.yml  
+8010 request ./overseerr/docker-compose.yml  

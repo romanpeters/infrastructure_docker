@@ -4,7 +4,7 @@ repos:
     hooks:
       - id: generate-port-list
         name: Generate port list
-        entry: python3 list.py README.md
+        entry: python3 list_services.py README.md
         language: python
         additional_dependencies:
           - pyyaml

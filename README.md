@@ -9,3 +9,4 @@
 8008 rtv ./heimdall_rtv/docker-compose.yml  
 8009 tautulli ./tautulli/docker-compose.yml  
 8010 request ./overseerr/docker-compose.yml  
+8011 homepage ./homepage/docker-compose.yml  

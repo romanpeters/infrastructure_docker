@@ -9,13 +9,6 @@ repos:
         additional_dependencies:
           - pyyaml
 
-      - id: generate-nix-config
-        name: Run compose2nix
-        entry: bash -c 'find . -name docker-compose.yml -execdir sh -c "compose2nix" \;'
-        language: system
-        types: [file]
-        files: docker-compose.yml
-
   - repo: https://github.com/ansible-community/ansible-lint.git
     rev: v6.22.2
     hooks:

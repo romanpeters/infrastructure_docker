@@ -9,9 +9,9 @@
   path: homebox/homebox/docker-compose.yml
   port: '8002'
 
-- image: nginx_proxy_manager
+- image: nginx-proxy-manager
   name: nginx
-  path: nginx_proxy_manager/nginx/docker-compose.yml
+  path: nginx-proxy-manager/nginx/docker-compose.yml
   port: '8003'
 
 - image: vaultwarden
@@ -34,9 +34,9 @@
   path: heimdall/hello/docker-compose.yml
   port: '8006'
 
-- image: uptime_kuma
-  name: uptime_kuma_tan
-  path: uptime_kuma/uptime_kuma_tan/docker-compose.yml
+- image: uptime-kuma
+  name: uptime-other
+  path: uptime-kuma/uptime-other/docker-compose.yml
   port: '8007'
 
 - image: heimdall

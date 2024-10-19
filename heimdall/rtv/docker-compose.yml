@@ -1,5 +1,4 @@
 ---
-name: rtv
 services:
   heimdall:
     container_name: heimdall_rtv

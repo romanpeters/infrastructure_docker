@@ -1,5 +1,4 @@
 ---
-name: request
 services:
   overseerr:
     image: sctx/overseerr:1.33.2

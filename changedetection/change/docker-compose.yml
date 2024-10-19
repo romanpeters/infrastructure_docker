@@ -1,5 +1,4 @@
 ---
-name: change
 services:
   changedetection:
     image: dgtlmoon/changedetection.io:0.45.12

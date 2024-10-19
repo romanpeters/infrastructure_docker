@@ -1,5 +1,4 @@
 ---
-name: tautulli
 services:
   tautulli:
     image: linuxserver/tautulli:2.13.4

@@ -1,5 +1,4 @@
 ---
-name: homepage
 services:
   homepage:
     image: ghcr.io/gethomepage/homepage:v0.9.10

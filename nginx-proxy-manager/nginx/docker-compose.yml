@@ -1,5 +1,4 @@
 ---
-name: nginx
 services:
   nginx_proxy_manager:
     image: jc21/nginx-proxy-manager:2.11.1

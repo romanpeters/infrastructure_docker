@@ -1,5 +1,4 @@
 ---
-name: homebox
 services:
   homebox:
     image: ghcr.io/hay-kot/homebox:v0.10.3

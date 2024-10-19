@@ -1,7 +1,11 @@
 import os
-import sys
 import yaml
 from typing import List, Dict, Optional
+
+
+# Hardcoded output files
+OUTPUT = "index.yml"
+README = "README.md"
 
 
 def extract_first_service_and_port(file_path: str) -> Optional[int]:
@@ -17,10 +21,11 @@ def extract_first_service_and_port(file_path: str) -> Optional[int]:
     return None
 
 
-def main(main_output: str = "index.yml", secondary_output: str = "README.md") -> None:
+def main() -> None:
     base_dir = "."  # Adjust this if your directory is different
     all_services: List[Dict[str, str]] = []
     processed_paths = set()
+    used_ports = set()
 
     for root, dirs, files in os.walk(base_dir):
         if "docker-compose.yml" in files:
@@ -28,6 +33,11 @@ def main(main_output: str = "index.yml", secondary_output: str = "README.md") ->
             if file_path not in processed_paths:
                 port = extract_first_service_and_port(file_path)
                 if port:
+                    if port in used_ports:
+                        print(f"Warning: Duplicate port {port} found in {file_path}")
+                    else:
+                        used_ports.add(port)
+
                     path_parts = root.split(os.sep)
                     image_name = path_parts[-2] if len(path_parts) > 1 else "."
                     container_name = path_parts[-1]
@@ -42,25 +52,22 @@ def main(main_output: str = "index.yml", secondary_output: str = "README.md") ->
 
     all_services.sort(key=lambda x: int(x["port"]))
 
-    # YAML output with a new line after each service block
-    output = "---\n" + "\n\n".join(
-        f"- name: {service['name']}\n  image: {service['image']}\n  port: {service['port']}\n  path: {service['path']}"
-        for service in all_services
+    # YAML output as a list of items with a newline between each item
+    output = "\n\n".join(
+        yaml.dump([service], default_flow_style=False).strip() for service in all_services
     ) + "\n"
 
-    # Write to index.yml (main output)
-    with open(main_output, "w") as file:
+    # Write to index.yml (OUTPUT)
+    with open(OUTPUT, "w") as file:
         file.write(output)
 
-    # Write to README.md (secondary output)
-    with open(secondary_output, "w") as file:
-        file.write(output)
+    # Write to README.md (README) enclosed in a code block
+    with open(README, "w") as file:
+        file.write(f"```\n{output}\n```")
 
-    print(f"Output written to {main_output} and {secondary_output}")
+    print(f"Output written to {OUTPUT} and {README}")
 
 
 if __name__ == "__main__":
-    main_output_file = sys.argv[1] if len(sys.argv) > 1 else "index.yml"
-    secondary_output_file = sys.argv[2] if len(sys.argv) > 2 else "README.md"
-    main(main_output=main_output_file, secondary_output=secondary_output_file)
+    main()
 

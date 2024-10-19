@@ -1,60 +1,59 @@
----
-- name: change
-  image: changedetection
-  port: 8001
+- image: changedetection
+  name: change
   path: changedetection/change/docker-compose.yml
+  port: '8001'
 
-- name: homebox
-  image: homebox
-  port: 8002
+- image: homebox
+  name: homebox
   path: homebox/homebox/docker-compose.yml
+  port: '8002'
 
-- name: nginx
-  image: nginx_proxy_manager
-  port: 8003
+- image: nginx_proxy_manager
+  name: nginx
   path: nginx_proxy_manager/nginx/docker-compose.yml
+  port: '8003'
 
-- name: vaultwarden
-  image: vaultwarden
-  port: 8004
+- image: vaultwarden
+  name: vaultwarden
   path: vaultwarden/vaultwarden/docker-compose.yml
+  port: '8004'
 
-- name: traefik
-  image: traefik
-  port: 8004
+- image: traefik
+  name: traefik
   path: traefik/traefik/docker-compose.yml
+  port: '8004'
 
-- name: adguard
-  image: adguardhome
-  port: 8005
+- image: adguardhome
+  name: adguard
   path: adguardhome/adguard/docker-compose.yml
+  port: '8005'
 
-- name: hello
-  image: heimdall
-  port: 8006
+- image: heimdall
+  name: hello
   path: heimdall/hello/docker-compose.yml
+  port: '8006'
 
-- name: uptime_kuma_tan
-  image: uptime_kuma
-  port: 8007
+- image: uptime_kuma
+  name: uptime_kuma_tan
   path: uptime_kuma/uptime_kuma_tan/docker-compose.yml
+  port: '8007'
 
-- name: rtv
-  image: heimdall
-  port: 8008
+- image: heimdall
+  name: rtv
   path: heimdall/rtv/docker-compose.yml
+  port: '8008'
 
-- name: tautullli
-  image: tautulli
-  port: 8009
+- image: tautulli
+  name: tautullli
   path: tautulli/tautullli/docker-compose.yml
+  port: '8009'
 
-- name: request
-  image: overseerr
-  port: 8010
+- image: overseerr
+  name: request
   path: overseerr/request/docker-compose.yml
+  port: '8010'
 
-- name: start
-  image: homepage
-  port: 8011
+- image: homepage
+  name: start
   path: homepage/start/docker-compose.yml
+  port: '8011'

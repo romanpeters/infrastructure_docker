@@ -2,9 +2,9 @@
 repos:
   - repo: local
     hooks:
-      - id: generate-port-list
-        name: Generate port list
-        entry: python3 list_services.py README.md
+      - id: generate-index
+        name: Generate index
+        entry: python3 write_index.py
         language: python
         additional_dependencies:
           - pyyaml

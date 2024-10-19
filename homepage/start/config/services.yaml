@@ -51,8 +51,12 @@
         href: https://adguard2.romanpeters.nl
         siteMonitor: https://adguard2.romanpeters.nl
 
-
 - Public:
+    - App:
+        icon: homepage.png
+        href: https://app.romanpeters.nl
+        siteMonitor: https://app.romanpeters.nl
+
     - Uptime:
         icon: uptime-kuma.png
         href: https://uptime.romanpeters.nl

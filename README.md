@@ -44,8 +44,12 @@ infrastructure_docker:
     image: homepage
     port: '8011'
     path: homepage/start
+  - name: app
+    image: homepage
+    port: '8012'
+    path: homepage/app
   - name: traefik
     image: traefik
-    port: '8012'
+    port: '8013'
     path: traefik/traefik
 ```

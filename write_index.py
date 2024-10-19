@@ -2,11 +2,13 @@ import os
 import yaml
 from typing import List, Dict, Optional
 
+class AnsibleDumper(yaml.Dumper):
+    def increase_indent(self, flow=False, indentless=False):
+        return super(AnsibleDumper, self).increase_indent(flow, False)
 
 # Hardcoded output files
 OUTPUT = "index.yml"
 README = "README.md"
-
 
 def extract_first_service_and_port(file_path: str) -> Optional[int]:
     with open(file_path, "r") as file:
@@ -19,7 +21,6 @@ def extract_first_service_and_port(file_path: str) -> Optional[int]:
             host_port = ports[0].split(":")[0]
             return int(host_port)
     return None
-
 
 def main() -> None:
     base_dir = "."  # Adjust this if your directory is different
@@ -52,21 +53,26 @@ def main() -> None:
 
     all_services.sort(key=lambda x: int(x["port"]))
 
-    # YAML output as a list of items with a newline between each item
-    output = "\n\n".join(
-        yaml.dump([service], default_flow_style=False).strip() for service in all_services
-    ) + "\n"
+    # Prepare YAML output with starting line
+    yaml_output = {"infrastructure_docker": all_services}
+
+    # Use AnsibleDumper for proper formatting
+    formatted_output = yaml.dump(
+        yaml_output,
+        Dumper=AnsibleDumper,
+        default_flow_style=False,
+        sort_keys=False
+    )
 
     # Write to index.yml (OUTPUT)
     with open(OUTPUT, "w") as file:
-        file.write(output)
+        file.write(formatted_output.strip() + "\n")  # Ensure no extra newline at end
 
     # Write to README.md (README) enclosed in a code block
     with open(README, "w") as file:
-        file.write(f"```\n{output}\n```")
+        file.write(f"```\n{formatted_output.strip()}\n```\n")  # Ensure no extra newline at end
 
     print(f"Output written to {OUTPUT} and {README}")
-
 
 if __name__ == "__main__":
     main()

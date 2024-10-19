@@ -32,10 +32,10 @@ infrastructure_docker:
     image: heimdall
     port: '8008'
     path: heimdall/rtv
-  - name: tautullli
+  - name: tautulli
     image: tautulli
     port: '8009'
-    path: tautulli/tautullli
+    path: tautulli/tautulli
   - name: request
     image: overseerr
     port: '8010'

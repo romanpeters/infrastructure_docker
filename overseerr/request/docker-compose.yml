@@ -11,3 +11,8 @@ services:
       - LOG_LEVEL=info
       - TZ=Europe/Amsterdam
     restart: unless-stopped
+    labels:
+      - homepage.group=RomanTV
+      - homepage.name=Overseerr
+      - homepage.icon=overseerr.png
+      - homepage.href=https://request.romanpeters.nl/

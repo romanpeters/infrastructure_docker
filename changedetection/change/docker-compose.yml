@@ -31,3 +31,8 @@ services:
       - DEFAULT_BLOCK_ADS=true
       - DEFAULT_STEALTH=true
     restart: unless-stopped
+    labels:
+      - homepage.group=Applications
+      - homepage.name=changedetection.io
+      - homepage.icon=changedetection-io.png
+      - homepage.href=https://change.romanpeters.nl/

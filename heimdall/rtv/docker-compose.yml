@@ -10,3 +10,8 @@ services:
     ports:
       - 8008:80
     restart: unless-stopped
+    labels:
+      - homepage.group=RomanTV
+      - homepage.name=Landing Page
+      - homepage.icon=heimdall.png
+      - homepage.href=https://rtv.romanpeters.nl/

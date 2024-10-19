@@ -12,3 +12,8 @@ services:
     ports:
       - "8002:7745"
     restart: always
+    labels:
+      - homepage.group=Applications
+      - homepage.name=Homebox
+      - homepage.icon=homebox.png
+      - homepage.href=https://homebox.romanpeters.nl/

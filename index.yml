@@ -2,48 +2,48 @@ infrastructure_docker:
   - name: change
     image: changedetection
     port: '8001'
-    path: changedetection/change/docker-compose.yml
+    path: changedetection/change
   - name: homebox
     image: homebox
     port: '8002'
-    path: homebox/homebox/docker-compose.yml
+    path: homebox/homebox
   - name: nginx
     image: nginx-proxy-manager
     port: '8003'
-    path: nginx-proxy-manager/nginx/docker-compose.yml
+    path: nginx-proxy-manager/nginx
   - name: vaultwarden
     image: vaultwarden
     port: '8004'
-    path: vaultwarden/vaultwarden/docker-compose.yml
+    path: vaultwarden/vaultwarden
   - name: adguard
     image: adguardhome
     port: '8005'
-    path: adguardhome/adguard/docker-compose.yml
+    path: adguardhome/adguard
   - name: hello
     image: heimdall
     port: '8006'
-    path: heimdall/hello/docker-compose.yml
+    path: heimdall/hello
   - name: uptime-other
     image: uptime-kuma
     port: '8007'
-    path: uptime-kuma/uptime-other/docker-compose.yml
+    path: uptime-kuma/uptime-other
   - name: rtv
     image: heimdall
     port: '8008'
-    path: heimdall/rtv/docker-compose.yml
+    path: heimdall/rtv
   - name: tautullli
     image: tautulli
     port: '8009'
-    path: tautulli/tautullli/docker-compose.yml
+    path: tautulli/tautullli
   - name: request
     image: overseerr
     port: '8010'
-    path: overseerr/request/docker-compose.yml
+    path: overseerr/request
   - name: start
     image: homepage
     port: '8011'
-    path: homepage/start/docker-compose.yml
+    path: homepage/start
   - name: traefik
     image: traefik
     port: '8012'
-    path: traefik/traefik/docker-compose.yml
+    path: traefik/traefik

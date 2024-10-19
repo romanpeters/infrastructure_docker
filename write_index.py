@@ -42,12 +42,13 @@ def main() -> None:
                     path_parts = root.split(os.sep)
                     image_name = path_parts[-2] if len(path_parts) > 1 else "."
                     container_name = path_parts[-1]
-                    relative_path = os.path.relpath(file_path, base_dir)
+                    # Change relative_path to only include directory structure
+                    relative_path = os.path.relpath(root, base_dir)  # Get only the directory part
                     all_services.append({
                         "name": container_name,
                         "image": image_name,
                         "port": str(port),
-                        "path": relative_path
+                        "path": relative_path  # Use the modified relative_path
                     })
                     processed_paths.add(file_path)
 

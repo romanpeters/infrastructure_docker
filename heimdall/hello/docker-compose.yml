@@ -11,7 +11,7 @@ services:
       - "8006:80"
     restart: always
     labels:
-      - homepage.group=Other
+      - homepage.group=Public
       - homepage.name=romanpeters.nl
       - homepage.icon=heimdall.png
       - homepage.href=https://hello.romanpeters.nl/

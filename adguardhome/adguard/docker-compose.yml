@@ -14,8 +14,3 @@ services:
       - ./work:/opt/adguardhome/work
       - ./conf:/opt/adguardhome/conf
     restart: always
-    labels:
-      - homepage.group=Infrastructure
-      - homepage.name=AdGuard Home
-      - homepage.icon=adguard-home.png
-      - homepage.href=https://adguard.romanpeters.nl/

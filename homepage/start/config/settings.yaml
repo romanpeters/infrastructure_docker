@@ -1,6 +1,7 @@
 ---
 title: Start
 headerStyle: clean
+statusStyle: dot
 useEqualHeights: true
 cardBlur: sm
 theme: dark

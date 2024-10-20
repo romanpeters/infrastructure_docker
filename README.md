@@ -1,4 +1,4 @@
-```
+```yaml
 infrastructure_docker:
   - name: change
     image: changedetection

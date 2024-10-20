@@ -71,7 +71,7 @@ def main() -> None:
 
     # Write to README.md (README) enclosed in a code block
     with open(README, "w") as file:
-        file.write(f"```\n{formatted_output.strip()}\n```\n")  # Ensure no extra newline at end
+        file.write(f"```yaml\n{formatted_output.strip()}\n```\n")  # Ensure no extra newline at end
 
     print(f"Output written to {OUTPUT} and {README}")
 

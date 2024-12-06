@@ -6,7 +6,6 @@ class AnsibleDumper(yaml.Dumper):
     def increase_indent(self, flow=False, indentless=False):
         return super(AnsibleDumper, self).increase_indent(flow, False)
 
-# Hardcoded output files
 OUTPUT = "index.yml"
 README = "README.md"
 

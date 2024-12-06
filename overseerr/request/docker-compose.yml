@@ -6,7 +6,7 @@ services:
     ports:
       - 8010:5055
     volumes:
-      - ./overseerr/config/:/app/config
+      - ./config/:/app/config
     environment:
       - LOG_LEVEL=info
       - TZ=Europe/Amsterdam

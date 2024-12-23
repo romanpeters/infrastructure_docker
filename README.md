@@ -56,4 +56,8 @@ infrastructure_docker:
     image: calibre-web
     port: '8014'
     path: calibre-web/calibre-web
+  - name: audiobookshelf
+    image: audiobookshelf
+    port: '8015'
+    path: audiobookshelf/audiobookshelf
 ```

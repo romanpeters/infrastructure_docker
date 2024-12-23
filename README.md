@@ -52,4 +52,8 @@ infrastructure_docker:
     image: traefik
     port: '8013'
     path: traefik/traefik
+  - name: calibre-web
+    image: calibre-web
+    port: '8014'
+    path: calibre-web/calibre-web
 ```

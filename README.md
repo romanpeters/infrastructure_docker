@@ -52,12 +52,12 @@ infrastructure_docker:
     image: traefik
     port: '8013'
     path: traefik/traefik
-  - name: calibre-web
+  - name: ebooks
     image: calibre-web
     port: '8014'
-    path: calibre-web/calibre-web
-  - name: audiobookshelf
+    path: calibre-web/ebooks
+  - name: books
     image: audiobookshelf
     port: '8015'
-    path: audiobookshelf/audiobookshelf
+    path: audiobookshelf/books
 ```

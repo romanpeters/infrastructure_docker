@@ -9,8 +9,8 @@ services:
     ports:
       - 8015:80
     volumes:
-      - ./audiobookshelf/config:/config
-      - ./audiobookshelf/data:/metadata
+      - ./config:/config
+      - ./data:/metadata
       - /mnt/media/books/audiobooks:/audiobooks
       - /mnt/media/books/ebooks:/ebooks
     restart: unless-stopped
